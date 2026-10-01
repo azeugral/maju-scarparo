@@ -47,6 +47,74 @@
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
+  <!-- Fundo botânico fixo: ramos nos cantos balançando devagar (CSS, sem JS) -->
+  <div class="flora" aria-hidden="true">
+    <svg class="flora__low" viewBox="0 0 300 460" preserveAspectRatio="xMinYMax meet">
+      <defs>
+        <path id="fl-leaf" d="M0 0 C 8 -6.5, 22 -6.5, 30 0 C 22 6.5, 8 6.5, 0 0 Z"/>
+      </defs>
+      <!-- capim -->
+      <g class="sway" style="--o: 58px 460px; --d: 11s; --a: 2.2deg">
+        <path class="stem" d="M60 460 C 58 380, 50 300, 28 214"/>
+        <path class="stem" d="M52 460 C 46 404, 30 352, 6 314"/>
+        <path class="stem" d="M68 460 C 72 372, 86 296, 112 222"/>
+      </g>
+      <!-- sálvia -->
+      <g class="sway" style="--o: 120px 460px; --d: 13s; --a: 1.6deg; --delay: -4s">
+        <path class="stem" d="M120 460 C 118 400, 125 330, 140 262 C 149 224, 155 192, 160 160"/>
+        <use href="#fl-leaf" transform="translate(119 424) rotate(200)"/>
+        <use href="#fl-leaf" transform="translate(120 412) rotate(-24)"/>
+        <use href="#fl-leaf" transform="translate(121 378) rotate(196)"/>
+        <use href="#fl-leaf" transform="translate(123 366) rotate(-30)"/>
+        <use href="#fl-leaf" transform="translate(128 326) rotate(192)"/>
+        <use href="#fl-leaf" transform="translate(131 314) rotate(-36)"/>
+        <use href="#fl-leaf" transform="translate(139 276) rotate(190) scale(.85)"/>
+        <use href="#fl-leaf" transform="translate(142 264) rotate(-42) scale(.85)"/>
+        <use href="#fl-leaf" transform="translate(150 226) rotate(186) scale(.7)"/>
+        <use href="#fl-leaf" transform="translate(153 216) rotate(-48) scale(.7)"/>
+        <use href="#fl-leaf" transform="translate(160 162) rotate(-78) scale(.6)"/>
+      </g>
+      <!-- eucalipto -->
+      <g class="sway" style="--o: 198px 460px; --d: 15s; --a: 1.4deg; --delay: -7s">
+        <path class="stem" d="M198 460 C 204 400, 214 340, 238 282 C 252 248, 262 222, 272 192"/>
+        <circle cx="188" cy="420" r="11"/><circle cx="214" cy="400" r="10"/>
+        <circle cx="200" cy="362" r="10"/><circle cx="226" cy="338" r="9"/>
+        <circle cx="219" cy="302" r="9"/><circle cx="247" cy="284" r="8"/>
+        <circle cx="244" cy="246" r="7"/><circle cx="265" cy="232" r="6.5"/>
+        <circle cx="264" cy="204" r="5.5"/>
+      </g>
+    </svg>
+
+    <svg class="flora__high" viewBox="0 0 320 360" preserveAspectRatio="xMaxYMin meet">
+      <defs>
+        <path id="fl-olive" d="M0 0 C 10 -5.5, 28 -5.5, 40 0 C 28 5.5, 10 5.5, 0 0 Z"/>
+      </defs>
+      <!-- galho pendente (oliveira) -->
+      <g class="sway" style="--o: 320px 8px; --d: 14s; --a: 1.8deg; --delay: -2s">
+        <path class="stem" d="M320 8 C 272 28, 232 70, 204 128 C 188 162, 180 194, 176 236"/>
+        <use href="#fl-olive" transform="translate(296 16) rotate(150)"/>
+        <use href="#fl-olive" transform="translate(284 26) rotate(70)"/>
+        <use href="#fl-olive" transform="translate(262 40) rotate(160)"/>
+        <use href="#fl-olive" transform="translate(250 54) rotate(80)"/>
+        <use href="#fl-olive" transform="translate(232 76) rotate(166)"/>
+        <use href="#fl-olive" transform="translate(222 92) rotate(92)"/>
+        <use href="#fl-olive" transform="translate(208 120) rotate(170) scale(.85)"/>
+        <use href="#fl-olive" transform="translate(201 136) rotate(100) scale(.85)"/>
+        <use href="#fl-olive" transform="translate(190 168) rotate(176) scale(.7)"/>
+        <use href="#fl-olive" transform="translate(186 184) rotate(108) scale(.7)"/>
+        <use href="#fl-olive" transform="translate(176 236) rotate(96) scale(.55)"/>
+      </g>
+      <!-- raminho menor -->
+      <g class="sway" style="--o: 320px 60px; --d: 10s; --a: 2.6deg; --delay: -5s">
+        <path class="stem" d="M320 60 C 298 84, 286 110, 280 146"/>
+        <use href="#fl-olive" transform="translate(306 76) rotate(150) scale(.6)"/>
+        <use href="#fl-olive" transform="translate(296 92) rotate(80) scale(.6)"/>
+        <use href="#fl-olive" transform="translate(287 116) rotate(160) scale(.55)"/>
+        <use href="#fl-olive" transform="translate(281 146) rotate(100) scale(.5)"/>
+      </g>
+    </svg>
+  </div>
+
   <header class="header" data-header>
     <div class="wrap header__in">
       <a class="brand" href="#topo" aria-label="Maria Julia Scarparo, início">
@@ -290,6 +358,5 @@
   <a class="dock btn js-agendar" data-dock href="https://wa.me/5519997148993?text=Ol%C3%A1%2C%20Maju!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" rel="noopener">Agendar sessão</a>
 
   <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/leaves.js" defer></script>
 </body>
 </html>

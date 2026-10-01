@@ -170,6 +170,8 @@ h3 {
 .facts div { display: grid; gap: .15rem; padding-block: 1rem; border-bottom: 1px solid var(--fio); }
 .facts dt { font-size: .8125rem; letter-spacing: .06em; text-transform: uppercase; color: var(--grafite-2); }
 .facts dd { margin: 0; }
+.inline { color: var(--salvia); text-underline-offset: .2em; text-decoration-thickness: 1px; transition: color var(--t) var(--ease); }
+.inline:hover { color: var(--salvia-2); }
 
 .topics { display: grid; gap: 0; margin-top: 3rem; border-top: 1px solid var(--fio); }
 .topics li { padding-block: 1.75rem; border-bottom: 1px solid var(--fio); }
@@ -270,6 +272,7 @@ h3 {
   .split { grid-template-columns: 1fr 1.6fr; gap: 3rem; align-items: start; }
   .topics { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; border-top: 0; }
   .topics li { border-top: 1px solid var(--fio); border-bottom: 0; }
+  .topics--4 { grid-template-columns: repeat(2, 1fr); row-gap: 0; }
   .pillars { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
   .place { grid-template-columns: 1fr 1.25fr; align-items: center; gap: 4rem; }
   .footer__grid { grid-template-columns: 1.4fr 1fr; }
@@ -278,7 +281,8 @@ h3 {
 }
 @media (min-width: 64em) {
   .h2 { position: sticky; top: calc(var(--header-h) + 2rem); }
-  #abordagem .h2, #onde .h2 { position: static; }
+  #abordagem .h2, #onde .h2, #temas .h2 { position: static; }
+  .topics--4 { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
 }
 @media (max-height: 30em) and (orientation: landscape) {
   .hero { padding-top: 2rem; }

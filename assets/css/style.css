@@ -274,7 +274,7 @@ h3 {
 /* Lola: faixa com "chão" no topo do rodapé */
 .footer { padding-top: 1.75rem; }
 .lola {
-  position: relative; height: 42px; margin-bottom: 2.25rem;
+  position: relative; height: 62px; margin-bottom: 2.25rem;
   border-bottom: 1px solid var(--fio);
 }
 .lola__dog {
@@ -286,7 +286,7 @@ h3 {
 .lola__dog canvas { image-rendering: pixelated; image-rendering: crisp-edges; }
 .lola__dog:focus-visible { outline: 2px solid var(--salvia); outline-offset: 4px; }
 .lola__fx {
-  position: absolute; bottom: 36px; pointer-events: none;
+  position: absolute; bottom: 50px; pointer-events: none;
   image-rendering: pixelated;
   animation: lola-sobe 1.4s var(--ease) forwards;
 }
@@ -297,7 +297,7 @@ h3 {
   to   { transform: translate(6px, -26px); opacity: 0; }
 }
 .lola__tag {
-  position: absolute; bottom: 52px; transform: translateX(-50%);
+  position: absolute; bottom: 68px; transform: translateX(-50%);
   font: 500 .75rem/1 var(--f-text); letter-spacing: .04em;
   color: var(--grafite-2); white-space: nowrap; pointer-events: none;
   animation: lola-tag 2.2s var(--ease) forwards;

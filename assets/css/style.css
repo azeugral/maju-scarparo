@@ -271,6 +271,43 @@ h3 {
 .footer__note { font-size: .875rem; max-width: 52ch; padding-top: 1.5rem; border-top: 1px solid var(--fio); }
 .footer__sign a { color: var(--grafite); }
 
+/* Lola: faixa com "chão" no topo do rodapé */
+.footer { padding-top: 1.75rem; }
+.lola {
+  position: relative; height: 32px; margin-bottom: 2.25rem;
+  border-bottom: 1px solid var(--fio);
+}
+.lola__dog {
+  position: absolute; left: 0; bottom: 0;
+  padding: 0; border: 0; background: none; cursor: pointer;
+  line-height: 0; will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+}
+.lola__dog canvas { image-rendering: pixelated; image-rendering: crisp-edges; }
+.lola__dog:focus-visible { outline: 2px solid var(--salvia); outline-offset: 4px; }
+.lola__fx {
+  position: absolute; bottom: 28px; pointer-events: none;
+  image-rendering: pixelated;
+  animation: lola-sobe 1.4s var(--ease) forwards;
+}
+.lola__fx--z { animation-duration: 2.4s; opacity: .7; }
+@keyframes lola-sobe {
+  from { transform: translate(0, 0); opacity: 0; }
+  20%  { opacity: 1; }
+  to   { transform: translate(6px, -26px); opacity: 0; }
+}
+.lola__tag {
+  position: absolute; bottom: 44px; transform: translateX(-50%);
+  font: 500 .75rem/1 var(--f-text); letter-spacing: .04em;
+  color: var(--grafite-2); white-space: nowrap; pointer-events: none;
+  animation: lola-tag 2.2s var(--ease) forwards;
+}
+@keyframes lola-tag {
+  from { opacity: 0; transform: translate(-50%, 4px); }
+  15%, 75% { opacity: 1; transform: translate(-50%, 0); }
+  to { opacity: 0; transform: translate(-50%, -4px); }
+}
+
 /* 10. Barra de agendamento (celular) ---------------------- */
 .dock {
   position: fixed; z-index: 60;

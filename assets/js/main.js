@@ -27,10 +27,12 @@
   const hero = document.querySelector('.hero');
   const cta = document.querySelector('.cta');
   if (dock && hero && cta && 'IntersectionObserver' in window) {
-    let pastHero = false, atCta = false;
-    const sync = () => dock.classList.toggle('is-on', pastHero && !atCta);
+    let pastHero = false, atCta = false, atFooter = false;
+    const sync = () => dock.classList.toggle('is-on', pastHero && !atCta && !atFooter);
     new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; sync(); }).observe(hero);
     new IntersectionObserver(([e]) => { atCta = e.isIntersecting; sync(); }).observe(cta);
+    const footer = document.querySelector('.footer');
+    if (footer) new IntersectionObserver(([e]) => { atFooter = e.isIntersecting; sync(); }).observe(footer);
   }
 
   // Ano no rodapé

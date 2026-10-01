@@ -145,17 +145,33 @@ h3 {
 .hero__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 2rem; }
 
 .portrait { margin: 0; width: min(100%, 26rem); justify-self: center; }
-.portrait__ph {
-  aspect-ratio: 4 / 5;
-  display: grid; place-items: center;
-  background:
-    radial-gradient(120% 80% at 30% 20%, var(--papel) 0%, transparent 60%),
-    var(--linho-2);
-  border: 1px solid var(--fio);
+.portrait { position: relative; }
+.portrait::after {           /* moldura deslocada, eco da sombra dos botões */
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  border: 1px solid var(--sombra);
+  transform: translate(14px, 14px);
 }
-.portrait__ph span { font: 300 clamp(4rem, 14vw, 6.5rem)/1 var(--f-display); color: var(--sombra); letter-spacing: .04em; }
-.portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-.portrait__cap { margin-top: .75rem; font-size: .8125rem; color: var(--grafite-2); }
+.portrait img {
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+  background: var(--linho-2);
+}
+/* entrada da foto: cortina subindo + leve zoom-out */
+.js .portrait[data-reveal] { opacity: 1; transform: none; }
+.js .portrait[data-reveal] img {
+  clip-path: inset(100% 0 0 0); transform: scale(1.06);
+  transition: clip-path 1.4s var(--ease) .2s, transform 2.2s var(--ease) .2s;
+}
+.js .portrait[data-reveal].is-in img { clip-path: inset(0 0 0 0); transform: none; }
+.js .portrait[data-reveal]::after { opacity: 0; transition: opacity 1.2s var(--ease) .9s; }
+.js .portrait[data-reveal].is-in::after { opacity: 1; }
+
+/* folhas caindo (leaves.js) */
+.leaves {
+  position: fixed; inset: 0; z-index: 40;
+  pointer-events: none;
+  opacity: .42;
+  mix-blend-mode: multiply;
+}
 
 /* 7. Seções ----------------------------------------------- */
 .section { padding-block: var(--space); }
@@ -294,4 +310,6 @@ h3 {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; transition-delay: 0s !important; }
   .js [data-reveal] { opacity: 1; transform: none; }
+  .js .portrait[data-reveal] img { clip-path: none; transform: none; }
+  .js .portrait[data-reveal]::after { opacity: 1; }
 }
